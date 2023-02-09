@@ -13,6 +13,7 @@ export default function Weather() {
               type="search"
               placeholder="Enter a city"
               className="form-control"
+              autoFocus="on"
             ></input>
           </div>
           <div className="col-3">
@@ -36,13 +37,14 @@ export default function Weather() {
 
       <div className="row">
         <div className="col-6">
-          <ReactAnimatedWeather
-            icon="CLEAR_NIGHT"
-            color="grey"
-            size={48}
-            animate={true}
-          />{" "}
-          <h2>-8℃</h2>
+            <ReactAnimatedWeather
+              icon="CLEAR_NIGHT"
+              color="grey"
+              size={58}
+              animate={true}
+            />{" "}
+          <span className="temperature">-8 </span>{" "}
+          <span className="unit"> ℃ | ℉</span>{" "}
         </div>
 
         <div className="col-6">
@@ -53,8 +55,6 @@ export default function Weather() {
           </ul>
         </div>
       </div>
-     
     </div>
-    
   );
 }

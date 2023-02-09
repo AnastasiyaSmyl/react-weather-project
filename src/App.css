@@ -1,13 +1,8 @@
 .App {
-    display: block;
-    padding: auto;
-    margin: 30px 167px;
+   max-width: 600px;
+   margin: 30px auto;
 }
 
 .container {
-    
-    padding: 0 15px;
     margin: auto;
-    
-
 }
