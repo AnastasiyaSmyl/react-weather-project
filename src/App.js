@@ -1,4 +1,5 @@
 import Weather from './Weather';
+import Footer from './Footer';
 
 import './App.css';
 
@@ -9,6 +10,7 @@ function App() {
         Start
         <Weather />
       </div>
+<Footer />
     </div>
   );
 }

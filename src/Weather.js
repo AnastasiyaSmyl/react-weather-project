@@ -1,11 +1,29 @@
 import React from "react";
-
 import ReactAnimatedWeather from "react-animated-weather";
+
 import "./Weather.css";
 
 export default function Weather() {
   return (
     <div className="Weather">
+      <form>
+        <div className="row">
+          <div className="col-9">
+            <input
+              type="search"
+              placeholder="Enter a city"
+              className="form-control"
+            ></input>
+          </div>
+          <div className="col-3">
+            <input
+              type="submit"
+              className="btn btn-primary w-100"
+              value="Search"
+            ></input>{" "}
+          </div>
+        </div>
+      </form>
       <h1>
         Kyiv,
         <br />
@@ -35,6 +53,8 @@ export default function Weather() {
           </ul>
         </div>
       </div>
+     
     </div>
+    
   );
 }
