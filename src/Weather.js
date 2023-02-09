@@ -1,9 +1,18 @@
 import React from "react";
 import ReactAnimatedWeather from "react-animated-weather";
+import axios from "axios";
 
 import "./Weather.css";
 
 export default function Weather() {
+  function showWeather(response) {}
+
+  let apiKey = "794t01af404a57a31b48o842fab9851b";
+  let city = "Kyiv";
+  let apiUrl =
+    "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric";
+  //axios.get(apiUrl).then(showWeather);
+
   return (
     <div className="Weather">
       <form>
@@ -37,12 +46,12 @@ export default function Weather() {
 
       <div className="row">
         <div className="col-6">
-            <ReactAnimatedWeather
-              icon="CLEAR_NIGHT"
-              color="grey"
-              size={58}
-              animate={true}
-            />{" "}
+          <ReactAnimatedWeather
+            icon="CLEAR_NIGHT"
+            color="grey"
+            size={58}
+            animate={true}
+          />{" "}
           <span className="temperature">-8 </span>{" "}
           <span className="unit"> ℃ | ℉</span>{" "}
         </div>
