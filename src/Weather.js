@@ -5,13 +5,15 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Weather() {
-  function showWeather(response) {}
+  function showWeather(response) {
+    console.log(response.data);
+  }
 
   let apiKey = "794t01af404a57a31b48o842fab9851b";
   let city = "Kyiv";
   let apiUrl =
-    "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric";
-  //axios.get(apiUrl).then(showWeather);
+    'https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric';
+  axios.get(apiUrl).then(showWeather);
 
   return (
     <div className="Weather">
