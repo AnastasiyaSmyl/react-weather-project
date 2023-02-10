@@ -12,7 +12,7 @@ export default function Weather() {
   let apiKey = "794t01af404a57a31b48o842fab9851b";
   let city = "Kyiv";
   let apiUrl =
-    'https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric';
+    'https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric';
   axios.get(apiUrl).then(showWeather);
 
   return (
