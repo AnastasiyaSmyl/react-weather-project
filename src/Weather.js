@@ -18,6 +18,7 @@ export default function Weather(props) {
       country: response.data.country,
       description: response.data.condition.description,
       temperature: response.data.temperature.current,
+      feels: response.data.temperature.feels_like,
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       iconUrl:
@@ -73,8 +74,8 @@ export default function Weather(props) {
           </div>
           <div className="col-6">
             <ul>
-              <li>Precipitation: 0 mm</li>
-              <li>Humidity:{weatherData.humidity}%</li>
+              <li>Feels like: {Math.round(weatherData.feels)}</li>
+              <li>Humidity: {weatherData.humidity}%</li>
               <li>Wind: {Math.round(weatherData.wind)} km/h</li>
             </ul>
           </div>
