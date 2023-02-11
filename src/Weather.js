@@ -1,94 +1,90 @@
-import React, {useState} from "react";
-import ReactAnimatedWeather from "react-animated-weather";
+import React, { useState } from "react";
+//import ReactAnimatedWeather from "react-animated-weather";
 import axios from "axios";
 
 import "./Weather.css";
 
-export default function Weather() {
-
-const[ready, setReady] = useState(false);
-const[weatherData, setWeatherData] = useState({});
+export default function Weather(props) {
+  //const [ready, setReady] = useState(false);
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function showWeather(response) {
-    console.log(response.data);
+    //console.log(response.data);
     setWeatherData({
+      ready: true,
+      date: "Wednesday 8 February",
       city: response.data.city,
       country: response.data.country,
-      description: response.data.description,
+      description: response.data.condition.description,
       temperature: response.data.temperature.current,
-      wind: 12
+      humidity: response.data.temperature.humidity,
+      wind: response.data.wind.speed,
+      iconUrl:
+        "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png",
     });
-    setReady(true);
   }
 
-  if (ready) {
-
-return (
-  <div className="Weather">
-    <form>
-      <div className="row">
-        <div className="col-9">
-          <input
-            type="search"
-            placeholder="Enter a city"
-            className="form-control"
-            autoFocus="on"
-          ></input>
-        </div>
-        <div className="col-3">
-          <input
-            type="submit"
-            className="btn btn-primary w-100"
-            value="Search"
-          ></input>{" "}
-        </div>
-      </div>
-    </form>
-    <h1>
-      {weatherData.city},
-      <br />
-      {weatherData.country}{" "}
-    </h1>
-    <ul>
-      <li> Wednesday, 8 February </li>
-      <li>{weatherData.discription}</li>
-    </ul>
-
-    <div className="row">
-      <div className="col-6">
-        <ReactAnimatedWeather
-          icon="CLEAR_NIGHT"
-          color="grey"
-          size={58}
-          animate={true}
-        />{" "}
-        <span className="temperature">
-          {Math.round(weatherData.temperature)}{" "}
-        </span>{" "}
-        <span className="unit"> ℃ | ℉</span>{" "}
-      </div>
-
-      <div className="col-6">
+  if (weatherData.ready) {
+    return (
+      <div className="Weather">
+        <form>
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city"
+                className="form-control"
+                autoFocus="on"
+              ></input>
+            </div>
+            <div className="col-3">
+              <input
+                type="submit"
+                className="btn btn-primary w-100"
+                value="Search"
+              ></input>{" "}
+            </div>
+          </div>
+        </form>
+        <h1>
+          {weatherData.city},
+          <br />
+          {weatherData.country}{" "}
+        </h1>
         <ul>
-          <li>Precipitation: 0 mm</li>
-          <li>Humidity: 83%</li>
-          <li>Wind: {weatherData.wind} km/h</li>
+          <li> {weatherData.date} </li>
+          <li className="text-capitalize">{weatherData.description}</li>
         </ul>
+
+        <div className="row">
+          <div className="col-6">
+            <div className="clearfix">
+              <img
+                src={weatherData.iconUrl}
+                alt={weatherData.description}
+                className="float-left"
+              />{" "}
+              <span className="temperature">
+                {Math.round(weatherData.temperature)}{" "}
+              </span>{" "}
+              <span className="unit"> ℃ | ℉</span>{" "}
+            </div>
+          </div>
+          <div className="col-6">
+            <ul>
+              <li>Precipitation: 0 mm</li>
+              <li>Humidity:{weatherData.humidity}%</li>
+              <li>Wind: {Math.round(weatherData.wind)} km/h</li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-);
+    );
   } else {
+    const apiKey = "794t01af404a57a31b48o842fab9851b";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.currentCity}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showWeather);
 
-  const apiKey = "794t01af404a57a31b48o842fab9851b";
-  let city = "Kyiv";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeather);
-
-  return "Loading..."
+    return "Loading...";
   }
-
-
-
-  
 }

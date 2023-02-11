@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <div className="container">
         
-        <Weather />
+        <Weather currentCity="Kyiv"/>
       </div>
 <Footer />
     </div>
