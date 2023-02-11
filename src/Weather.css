@@ -20,9 +20,16 @@
 .Weather .temperature {
   font-weight: bold;
   color: rbg(33, 33, 33);
-  font-size: 54px;
+  font-size: 64px;
   font-weight: 400;
 }
+
+.WeatherTemp .unit{
+  position: absolute;
+  top: 223px;
+
+}
+
 
 .Weather ul {
   margin: 0;
@@ -35,4 +42,9 @@
   font-weight: 100;
   line-height: 19px;
   list-style: none;
+}
+
+.WeatherTemp a{
+    text-decoration: none;
+    color: gray;
 }
