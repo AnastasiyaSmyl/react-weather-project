@@ -11,7 +11,7 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.currentCity);
 
   function showWeather(response) {
-    // console.log(response.data);
+     //console.log(response.data.condition.icon);
     setWeatherData({
       ready: true,
       date: new Date(response.data.time * 1000),
@@ -23,7 +23,7 @@ export default function Weather(props) {
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       iconUrl:
-        "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png",
+        `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
     });
   }
 

@@ -3,35 +3,35 @@ import React from "react";
 export default function CurrentDate(props){
     //console.log(props.date);
     let days = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-    "Saturday"    
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+    "Sat"    
 ];
 
 let months = [
-    "January",
-    "February",
-    "March",
-    "April",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
     "May",
     "June",
     "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec"
 ];
     let day= days[props.date.getDay()];
     let month = months[props.date.getMonth()];
     let date = props.date.getDate();
     return (
         <div>
-            {month} {date}, <br /> {day}
+            {month} {date}, {day}
         </div>
     )
 }
