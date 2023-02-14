@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import Footer from "./Footer";
 //import ReactAnimatedWeather from "react-animated-weather";
 import axios from "axios";
 
@@ -45,6 +46,7 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
+      <div className="container">
       <div className="Weather">
         <form onSubmit={handleSubmit}>
           <div className="row">
@@ -67,6 +69,9 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo info={weatherData} />
+        </div>
+          <Footer />
+        
       </div>
     );
   } else {
