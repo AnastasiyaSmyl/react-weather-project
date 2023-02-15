@@ -2,6 +2,8 @@ import React from "react";
 import WeatherIcon from "./WeatherIcon";
 import CurrentDate from "./CurrentDate";
 import WeatherTemp from "./WeatherTemp";
+import WeatherDaily from "./WeatherDaily";
+
 
 export default function WeatherInfo(props) {
   return (
@@ -37,7 +39,7 @@ export default function WeatherInfo(props) {
           </ul>
         </div>
       </div>
-      
+      <WeatherDaily/>
     </div>
   );
 }

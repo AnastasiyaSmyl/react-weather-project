@@ -1,0 +1,8 @@
+.WeatherDaily {
+    text-align: center;
+}
+
+.WeatherDaily .daily-temp-min{
+    opacity: 0.6;
+    margin-right: 5px;
+}
