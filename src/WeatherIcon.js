@@ -2,5 +2,5 @@ import React from "react";
 
 
 export default function WeatherIcon(props){
-    return <img src={props.code} alt={props.description} />;
+    return <img src={props.code} alt={props.description} width={props.size}/>;
 }

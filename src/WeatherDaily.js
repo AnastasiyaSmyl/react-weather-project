@@ -17,22 +17,27 @@ export default function WeatherDaily(props) {
   }
 
   if (loaded) {
-    console.log(forecast);
     return (
       <div className="WeatherDaily">
         <div className="row">
-          <div className="col">
-            <ForecastDay data={forecast[1].time} />
-            <WeatherIcon code={forecast[0].condition.icon_url} />
-            <div className="daily-temp">
-              <span className="daily-temp-min">
-                {Math.round(forecast[0].temperature.minimum)}
-              </span>
-              <span className="daily-temp-max">
-                {Math.round(forecast[0].temperature.maximum)}{" "}
-              </span>
-            </div>
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index > 0) {
+            return (
+              <div className="col" key={index} >
+                <ForecastDay data={dailyForecast} />
+                <WeatherIcon code={dailyForecast.condition.icon_url} size={40} />
+                <div className="daily-temp">
+                  <span className="daily-temp-min">
+                    {Math.round(dailyForecast.temperature.minimum)}
+                  </span>
+                  <span className="daily-temp-max">
+                    {Math.round(dailyForecast.temperature.maximum)}{" "}
+                  </span>
+                </div>
+              </div>
+            );
+            }
+          })}
         </div>
       </div>
     );
