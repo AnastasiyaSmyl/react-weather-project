@@ -26,6 +26,7 @@ export default function WeatherInfo(props) {
             <WeatherIcon
               code={props.info.iconUrl}
               description={props.info.description}
+            
             />
             <WeatherTemp celsius={props.info.temperature} />
           </div>
