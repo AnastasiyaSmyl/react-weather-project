@@ -1,3 +1,9 @@
+:root{
+    --main-color:#A45C40;
+
+}
+
+
 .App {
    max-width: 600px;
    margin: 30px auto;
@@ -5,4 +11,5 @@
 
 .container {
     margin: auto;
+
 }

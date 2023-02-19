@@ -1,5 +1,31 @@
+:root{
+    --main-color:#A45C40;
+    --primary-color:#C38370;
+    --info-color:#E4B7A0;
+
+}
+
 .code-inform {
-    display: block;
+  display: block;
   margin: -26px 2px;
   font-size: 13px;
 }
+
+.info-line {
+  color:var(--primary-color);
+;
+}
+
+.no-underline {
+  text-decoration: none;
+color:var(--primary-color);
+  font-weight: bold;
+}
+ .no-underline:hover {
+  color:var(--primary-color);
+  opacity: 0.6;
+
+ }
+
+
+

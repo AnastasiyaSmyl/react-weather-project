@@ -1,21 +1,49 @@
+:root{
+    --main-color:#A45C40;
+    --primary-color:#C38370;
+    --info-color:#E4B7A0;
+    --background-color:#F6EEE0;
+
+}
+
+.btn-primary {
+   color: var(--background-color) !important;
+  background-color: var(--primary-color) !important;
+  
+  border-color: var(--info-color) !important;
+}
+
+.btn-primary:hover {
+ color: var(--primary-color) !important;
+  background-color: var(--info-color) !important;
+}
+
+.form-control {
+  border-color: var(--main-color) !important;
+  color: var(--main-color) !important;
+}
+
+.form-control:hover{
+  border-color: var(--info-color) !important;
+}
+
+
 .Weather {
   padding: 18px;
   margin: 30px auto;
   border: 3px;
-  border: 1px solid grey;
+  border: 1px solid var(--primary-color);
   border-radius: 4px;
+  background-color: var(--background-color);
 }
 
-
-
 .Weather h1 {
+  color: var(--main-color);
   font-size: 24px;
   font-weight: 100;
   margin: 20px 0 0 0;
   line-height: 29px;
-
 }
-
 
 .Weather .temperature {
   font-weight: bold;
@@ -24,27 +52,40 @@
   font-weight: 400;
 }
 
-.WeatherTemp .unit{
+.WeatherTemp .unit {
+  color: var(--main-color);
   position: absolute;
   top: 223px;
-
 }
-
 
 .Weather ul {
   margin: 0;
   padding: 0;
-
 }
 
-.Weather li{
+.Weather li {
+  color: var(--primary-color);
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
   list-style: none;
 }
 
-.WeatherTemp a{
-    text-decoration: none;
-    color: gray;
+.WeatherTemp a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.WeatherTemp a:hover {
+  color: var(--info-color)
+}
+
+.temperature{
+color: var(--main-color);
+font-weight: bold;
+}
+
+.daily-day,
+.daily-temp {
+  color: var(--main-color);
 }

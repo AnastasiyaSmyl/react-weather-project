@@ -10,7 +10,5 @@ export default function ForecastDay(props) {
     return days[day];
   }
 
-  return (
-      <div className="daily-day">{day()}</div>
-  );
+  return <div className="daily-day">{day()}</div>;
 }

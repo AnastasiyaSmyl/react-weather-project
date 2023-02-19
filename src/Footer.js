@@ -6,9 +6,19 @@ export default function Footer(){
     return (
       <footer>
         <div className="code-inform">
-          <small>
-            This project was coded <a href="/">Anastasiya Smyslova</a> and is{" "}
+          <small className="info-line">
+            This project was coded{" "}
             <a
+              className="no-underline"
+              href="https://www.linkedin.com/in/anastasiya-smyslova-190218243"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Anastasiya Smyslova
+            </a>{" "}
+            and is{" "}
+            <a
+              className="no-underline"
               href="https://github.com/AnastasiyaSmyl/react-weather-project"
               target="_blank"
               rel="noreferrer"
@@ -17,6 +27,7 @@ export default function Footer(){
             </a>{" "}
             and hosted on
             <a
+              className="no-underline"
               href="https://leafy-seahorse-bc54bb.netlify.app/"
               target="_blank"
               rel="noreferrer"
